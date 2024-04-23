@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-p-app-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: my-p-app
+  template:
+    metadata:
+      labels:
+        app: my-p-app
+    spec:
+      containers:
+      - name: my-p-app
+        image: yepaul/my-p-app:latest
+        ports:
+        - containerPort: 80
+
